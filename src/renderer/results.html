@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados - Java Code Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Resultados da Análise</h1>
+            <button id="back-btn">⬅️ Voltar</button>
+        </header>
+
+        <main>
+            <div class="summary-section">
+                <div class="summary-card">
+                    <h3>📊 Resumo</h3>
+                    <div class="summary-stats">
+                        <span id="total-files">Arquivos analisados: 0</span>
+                        <span id="files-with-errors">Arquivos com problemas: 0</span>
+                        <span id="total-issues">Total de problemas: 0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-grid">
+                <h3>🗂️ Classes com Problemas</h3>
+                <div class="grid-container">
+                    <table id="results-table">
+                        <thead>
+                            <tr>
+                                <th>Arquivo</th>
+                                <th>Problemas</th>
+                                <th>Linhas Afetadas</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="results-tbody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="details-modal" class="modal hidden">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 id="modal-title">Detalhes do Arquivo</h3>
+                        <button id="close-modal">✖️</button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="error-details"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="results-script.js"></script>
+</body>
+</html>

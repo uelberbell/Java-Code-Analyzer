@@ -1,0 +1,546 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+    color: white;
+    flex-shrink: 0;
+}
+
+header h1 {
+    font-size: 2.2em;
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+#back-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background 0.3s;
+    z-index: 10;
+}
+
+#back-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+main {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.input-section {
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+
+.folder-selector {
+    margin-bottom: 15px;
+}
+
+.folder-selector label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.folder-input {
+    display: flex;
+    gap: 8px;
+}
+
+.folder-input input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 2px solid #e1e5e9;
+    border-radius: 6px;
+    font-size: 0.9em;
+    background-color: #f8f9fa;
+}
+
+.folder-input input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.folder-input button,
+.action-buttons button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
+}
+
+.folder-input button:hover,
+.action-buttons button:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+}
+
+.action-buttons {
+    text-align: center;
+}
+
+.action-buttons button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.status-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: #667eea;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e1e5e9;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.results-info {
+    text-align: center;
+    width: 100%;
+}
+
+.result-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    border-left: 4px solid #667eea;
+    animation: slideInUp 0.6s ease-out;
+}
+
+.result-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.3em;
+}
+
+.result-card p {
+    margin-bottom: 15px;
+    color: #666;
+    line-height: 1.5;
+    font-size: 0.95em;
+}
+
+.pro-button {
+    background: linear-gradient(135deg, #6f42c1 0%, #e83e8c 100%) !important;
+    color: white !important;
+    border: none !important;
+    padding: 15px 30px !important;
+    border-radius: 8px !important;
+    font-size: 1.1em !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 8px 25px rgba(111, 66, 193, 0.3) !important;
+    margin-top: 20px !important;
+}
+
+.pro-button:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 15px 40px rgba(111, 66, 193, 0.4) !important;
+}
+
+.pro-button:active {
+    transform: translateY(-1px) !important;
+}
+
+#verify-btn {
+    font-size: 1.1em;
+    padding: 12px 24px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Footer profissional - LOGO MAIOR */
+footer {
+    margin-top: auto;
+    padding: 20px 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-branding {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: fit-content;
+}
+
+.footer-logo {
+    height: 45px !important;
+    /* AUMENTADO de 25px para 45px */
+    width: auto !important;
+    max-width: 120px !important;
+    /* AUMENTADO de 80px para 120px */
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+    transition: opacity 0.3s;
+    object-fit: contain !important;
+}
+
+.footer-logo:hover {
+    opacity: 1;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    /* Aumentado de 3px para 4px */
+}
+
+.footer-author,
+.footer-copyright {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85em;
+    /* Aumentado de 0.8em para 0.85em */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    /* Aumentado de 5px para 6px */
+    white-space: nowrap;
+}
+
+.footer-author strong,
+.footer-copyright strong {
+    color: white;
+    font-weight: 600;
+}
+
+.footer-tagline {
+    text-align: right;
+}
+
+.footer-tagline p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95em;
+    /* Aumentado de 0.9em para 0.95em */
+    margin: 0;
+    font-weight: 500;
+}
+
+.footer-tagline strong {
+    color: white;
+    background: linear-gradient(135deg, #6f42c1 0%, #e83e8c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Responsividade do footer */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    header {
+        margin-bottom: 15px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .footer-branding {
+        flex-direction: row;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .footer-logo {
+        height: 35px !important;
+        /* Proporcionalmente menor em mobile */
+        max-width: 100px !important;
+    }
+
+    .footer-text {
+        align-items: flex-start;
+    }
+
+    .footer-tagline {
+        text-align: center;
+    }
+
+    .footer-author,
+    .footer-copyright {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-height: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    header {
+        margin-bottom: 15px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    footer {
+        padding: 15px 0;
+    }
+
+    .footer-logo {
+        height: 30px !important;
+        /* Ainda menor em telas baixas */
+    }
+
+    /* Adicionar estas regras ao CSS existente */
+
+    .loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        color: #667eea;
+        padding: 30px;
+    }
+
+    .loading-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        max-width: 400px;
+        width: 100%;
+    }
+
+    .progress-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .progress-bar-container {
+        position: relative;
+        width: 100%;
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 8px;
+        background: #e1e5e9;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        border-radius: 4px;
+        width: 0%;
+        transition: width 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .progress-fill::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent);
+        animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+        0% {
+            transform: translateX(-100%);
+        }
+
+        100% {
+            transform: translateX(100%);
+        }
+    }
+
+    .progress-text {
+        position: absolute;
+        top: -25px;
+        right: 0;
+        font-size: 0.9em;
+        font-weight: 600;
+        color: #667eea;
+    }
+
+    .loading-details {
+        text-align: center;
+        width: 100%;
+    }
+
+    #loading-message {
+        display: block;
+        font-size: 1.1em;
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 8px;
+    }
+
+    .loading-stats {
+        font-size: 0.9em;
+        color: #777;
+        font-weight: 500;
+    }
+
+    .loading-stats span {
+        font-weight: 600;
+        color: #667eea;
+    }
+
+    /* Spinner menor quando há barra de progresso */
+    .loading .spinner {
+        width: 30px;
+        height: 30px;
+        border-width: 3px;
+    }
+}

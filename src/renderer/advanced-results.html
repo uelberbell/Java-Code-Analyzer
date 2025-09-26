@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados PRO - Java Code Analyzer</title>
+    <link rel="stylesheet" href="advanced-style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Java Code Analyzer PRO</h1>
+            <div class="quality-gate" id="quality-gate">
+                <span class="gate-status" id="gate-status">PASSED</span>
+            </div>
+            <button id="back-btn">⬅️ Voltar</button>
+            
+            <!-- Branding no header -->
+            <div class="header-branding">
+                <img src="./assets/capgemini-logo.png" alt="Capgemini" class="header-logo">
+                <div class="header-credits">
+                    <span class="header-author">uelber.jesus@capgemini.com</span>
+                    <span class="header-copilot">Powered by GitHub Copilot © 2025</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Dashboard de Métricas -->
+            <section class="metrics-dashboard">
+                <div class="metric-card total-issues">
+                    <div class="metric-icon">🎯</div>
+                    <div class="metric-content">
+                        <h3 id="total-issues-count">0</h3>
+                        <p>Total de Issues</p>
+                    </div>
+                </div>
+
+                <div class="metric-card technical-debt">
+                    <div class="metric-icon">⏱️</div>
+                    <div class="metric-content">
+                        <h3 id="technical-debt">0h</h3>
+                        <p>Dívida Técnica</p>
+                    </div>
+                </div>
+
+                <div class="metric-card files-analyzed">
+                    <div class="metric-icon">📁</div>
+                    <div class="metric-content">
+                        <h3 id="files-analyzed">0</h3>
+                        <p>Arquivos Analisados</p>
+                    </div>
+                </div>
+
+                <div class="metric-card coverage">
+                    <div class="metric-icon">🎯</div>
+                    <div class="metric-content">
+                        <h3 id="issues-coverage">0%</h3>
+                        <p>Arquivos com Issues</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Distribuição por Severidade -->
+            <section class="severity-section">
+                <h3>🚨 Distribuição por Severidade</h3>
+                <div class="severity-grid">
+                    <div class="severity-item blocker">
+                        <div class="severity-icon">🔴</div>
+                        <div class="severity-content">
+                            <span class="severity-count" id="blocker-count">0</span>
+                            <span class="severity-label">Blocker</span>
+                        </div>
+                    </div>
+                    
+                    <div class="severity-item critical">
+                        <div class="severity-icon">🚨</div>
+                        <div class="severity-content">
+                            <span class="severity-count" id="critical-count">0</span>
+                            <span class="severity-label">Critical</span>
+                        </div>
+                    </div>
+                    
+                    <div class="severity-item major">
+                        <div class="severity-icon">⚠️</div>
+                        <div class="severity-content">
+                            <span class="severity-count" id="major-count">0</span>
+                            <span class="severity-label">Major</span>
+                        </div>
+                    </div>
+                    
+                    <div class="severity-item minor">
+                        <div class="severity-icon">⚠️</div>
+                        <div class="severity-content">
+                            <span class="severity-count" id="minor-count">0</span>
+                            <span class="severity-label">Minor</span>
+                        </div>
+                    </div>
+                    
+                    <div class="severity-item info">
+                        <div class="severity-icon">ℹ️</div>
+                        <div class="severity-content">
+                            <span class="severity-count" id="info-count">0</span>
+                            <span class="severity-label">Info</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Distribuição por Categoria -->
+            <section class="category-section">
+                <h3>📊 Issues por Categoria</h3>
+                <div class="category-grid">
+                    <div class="category-item" data-category="codingStandards">
+                        <div class="category-icon">📐</div>
+                        <div class="category-content">
+                            <span class="category-count" id="codingStandards-count">0</span>
+                            <span class="category-label">Padrões de Código</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-item" data-category="codeSmells">
+                        <div class="category-icon">🦨</div>
+                        <div class="category-content">
+                            <span class="category-count" id="codeSmells-count">0</span>
+                            <span class="category-label">Code Smells</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-item" data-category="productionReadiness">
+                        <div class="category-icon">🚀</div>
+                        <div class="category-content">
+                            <span class="category-count" id="productionReadiness-count">0</span>
+                            <span class="category-label">Preparação Produção</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-item" data-category="performance">
+                        <div class="category-icon">⚡</div>
+                        <div class="category-content">
+                            <span class="category-count" id="performance-count">0</span>
+                            <span class="category-label">Performance</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-item" data-category="security">
+                        <div class="category-icon">🔒</div>
+                        <div class="category-content">
+                            <span class="category-count" id="security-count">0</span>
+                            <span class="category-label">Segurança</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tabela de Issues -->
+            <section class="issues-section">
+                <div class="section-header">
+                    <h3>📋 Detalhamento dos Issues</h3>
+                    <div class="filter-controls">
+                        <select id="severity-filter">
+                            <option value="all">Todas Severidades</option>
+                            <option value="blocker">Blocker</option>
+                            <option value="critical">Critical</option>
+                            <option value="major">Major</option>
+                            <option value="minor">Minor</option>
+                            <option value="info">Info</option>
+                        </select>
+                        
+                        <select id="category-filter">
+                            <option value="all">Todas Categorias</option>
+                            <option value="codingStandards">Padrões de Código</option>
+                            <option value="codeSmells">Code Smells</option>
+                            <option value="productionReadiness">Preparação Produção</option>
+                            <option value="performance">Performance</option>
+                            <option value="security">Segurança</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table id="issues-table">
+                        <thead>
+                            <tr>
+                                <th>Severidade</th>
+                                <th>Categoria</th>
+                                <th>Arquivo</th>
+                                <th>Linha</th>
+                                <th>Descrição</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="issues-tbody">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <!-- Modal de Detalhes -->
+        <div id="details-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modal-title">Detalhes do Issue</h3>
+                    <button id="close-modal">✖️</button>
+                </div>
+                <div class="modal-body">
+                    <div id="issue-details"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="advanced-results-script.js"></script>
+</body>
+</html>

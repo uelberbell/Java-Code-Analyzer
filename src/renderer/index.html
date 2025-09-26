@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Code Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Java Code Analyzer</h1>
+            <p>Ferramenta profissional para análise de padrões de código Java</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="folder-selector">
+                    <label for="folder-path">📁 Pasta JavaSource:</label>
+                    <div class="folder-input">
+                        <input type="text" id="folder-path" placeholder="Selecione a pasta com os arquivos Java..." readonly>
+                        <button type="button" id="select-folder-btn">Selecionar Pasta</button>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button type="button" id="verify-btn" disabled>🔍 Analisar Código</button>
+                </div>
+            </div>
+
+            <div class="status-section">
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <span>Analisando arquivos Java...</span>
+                </div>
+                
+                <div id="results-info" class="results-info hidden">
+                    <div class="result-card">
+                        <h3 id="result-title"></h3>
+                        <p id="result-description"></p>
+                        <button type="button" id="show-advanced-btn" class="pro-button hidden">🚀 Ver Análise Completa</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-branding">
+                    <img src="./assets/capgemini-logo.png" alt="Capgemini" class="footer-logo">
+                    <div class="footer-text">
+                        <p class="footer-author">👨‍💻 <strong>Author:</strong> uelber.jesus@capgemini.com</p>
+                        <p class="footer-copyright">🤖 <strong>Powered by:</strong> GitHub Copilot © 2025</p>
+                    </div>
+                </div>
+                <div class="footer-tagline">
+                    <p>💡 <strong>Java Code Analyzer PRO</strong> - Análise profissional de qualidade de código</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

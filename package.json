@@ -1,0 +1,42 @@
+{
+  "name": "java-code-analyzer",
+  "version": "1.0.0",
+  "description": "Ferramenta para análise de padrões de código Java",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --debug",
+    "build": "electron-builder"
+  },
+  "keywords": [
+    "java",
+    "analyzer",
+    "code-quality",
+    "electron"
+  ],
+  "author": "uelber-jesus_GCO2",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.1",
+    "path": "^0.12.7"
+  },
+  "build": {
+    "appId": "com.java-code-analyzer",
+    "productName": "Java Code Analyzer",
+    "win": {
+      "target": "nsis",
+      "requestedExecutionLevel": "asInvoker"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "runAfterFinish": true
+    }
+  }
+}
