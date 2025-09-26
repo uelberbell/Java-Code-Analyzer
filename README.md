@@ -72,15 +72,15 @@ Com interface inspirada no SonarQube, oferece uma experiência profissional para
 ## 📸 Capturas de Tela
 
 ### Tela Principal
-![Tela Principal](docs/screenshots/main-screen.png)
+![Tela Principal](<img width="783" height="662" alt="image" src="https://github.com/user-attachments/assets/c6aab662-789d-48af-89f4-d7c39fdf8879" />)
 *Interface principal com branding Capgemini e GitHub Copilot*
 
 ### Interface PRO
-![Interface PRO](docs/screenshots/pro-interface.png)
+![Interface PRO](<img width="1918" height="1031" alt="image" src="https://github.com/user-attachments/assets/f3e12453-dbe5-4962-819b-2226d0fe6ae2" />)
 *Dashboard estilo SonarQube com métricas em tempo real*
 
 ### Modal de Detalhes
-![Modal Detalhes](docs/screenshots/issue-details.png)
+![Modal Detalhes](<img width="1907" height="1027" alt="image" src="https://github.com/user-attachments/assets/7b952d17-d847-482f-bc6c-f747be55b0d4" />)
 *Modal com informações completas do issue e sugestões de correção*
 
 ## 🔧 Pré-requisitos
@@ -334,5 +334,6 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 *Última atualização: 26/01/2025 às 16:12 (UTC)*
 
 </div>
+
 
 
