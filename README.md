@@ -5,7 +5,7 @@
 ![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)
 ![Electron](https://img.shields.io/badge/electron-latest-brightgreen.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Author](https://img.shields.io/badge/author-uelber.jesus%40capgemini.com-orange.svg)
+![Author](https://img.shields.io/badge/author-uelberbell%40gmail.com.com-orange.svg)
 ![AI](https://img.shields.io/badge/powered%20by-GitHub%20Copilot-purple.svg)
 
 ## 📋 Índice
@@ -334,3 +334,4 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 *Última atualização: 26/01/2025 às 16:12 (UTC)*
 
 </div>
+
