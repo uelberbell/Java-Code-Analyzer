@@ -19,7 +19,7 @@ Uma ferramenta desktop simples e eficiente para análise de padrões de código 
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/uelber-jesus_GCO2/java-code-analyzer.git
+git clone https://github.com/uelberbell/Java-Code-Analyzer.git
 cd java-code-analyzer
 ```
 
@@ -104,5 +104,6 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 **uelber-jesus_GCO2**
 
 ---
+
 
 ⭐ Se este projeto foi útil para você, considere dar uma estrela no repositório!
